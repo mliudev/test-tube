@@ -24,7 +24,6 @@ from app.models import User
 @app.route('/index')
 @login_required
 def index():
-    user = {'username': 'Miguel'}
     posts = [
         {
             'author': {'username': 'Mike'},
@@ -35,7 +34,7 @@ def index():
             'body': 'Endgame is amazing!'
         }
     ]
-    return render_template('index.html', user=user, posts=posts)
+    return render_template('index.html', posts=posts)
 
 
 @app.route('/login', methods=['GET', 'POST'])
